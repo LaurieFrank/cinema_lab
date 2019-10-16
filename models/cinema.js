@@ -3,14 +3,25 @@ const Cinema = function (films) {
 };
 
 Cinema.prototype.getTitles = function () {
-    const result = this.films.map((film) => {
-      return film.title;
-    })
-    // console.log("in cinema", result);
-    return result;
+  const result = this.films.map((film) => {
+    return film.title;
+  })
+  // console.log("in cinema", result);
+  return result;
 };
 
-  // const filmTitles = getTitle(films);
-  // console.log(filmTitles);
+Cinema.prototype.findFilmByTitle = function(title){
+  return this.films.find((film) => {
+    return film.title === title
+  })
+  console.log('film by title', result);
+  return result;
+};
 
+// Cinema.prototype.filmByTitle = function (title) {
+//   return this.films.find((film) => {
+//     return film.title === title;
+//   });
+// };
+//
 module.exports = Cinema;
